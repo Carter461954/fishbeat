@@ -1,0 +1,6 @@
+<!-- tg.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24">
+  <rect width="24" height="24" rx="6" fill="#fff"/>
+  <path d="M20.857 3.144a2 2 0 00-2.06-.358l-14 6a2 2 0 00.35 3.83l3.82 1.16 1.16 3.82a2 2 0 003.83.35l6-14a2 2 0 00-.1-2.8z" stroke="#32AFED" stroke-width="2"/>
+  <path d="M9 15l1-4 4-1" stroke="#32AFED" stroke-width="2"/>
+</svg>
