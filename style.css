@@ -237,3 +237,40 @@ footer {
   .download-blocks { flex-direction: column; gap: 19px; }
   .screenshots-gallery img { width: 93vw; height: auto; }
 }
+
+.contact-row {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.contact-row span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+}
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 6px;
+  background: none;
+  transition: background 0.16s;
+  margin-left: 3px;
+}
+.icon-btn:hover {
+  background: #e0f2fe;
+}
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: drop-shadow(0 0 2px #0077ff22);
+  transition: filter 0.2s;
+}
+.icon-btn:hover img {
+  filter: drop-shadow(0 0 2px #0077ff) brightness(1.1);
+}
