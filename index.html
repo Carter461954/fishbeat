@@ -13,7 +13,29 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="shortcut icon" href="favicon.ico">
 </head>
+<script>
+  // Копіювання адрес і вивід підказки
+  document.querySelectorAll('.copy-link').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      var val = this.dataset.copy;
+      navigator.clipboard.writeText(val).then(function() {
+        showCopyAlert('Адресу скопійовано!');
+      });
+    });
+  });
 
+  function showCopyAlert(msg) {
+    var el = document.getElementById('copy-alert');
+    el.textContent = msg;
+    el.style.display = 'block';
+    el.style.opacity = 1;
+    setTimeout(function() {
+      el.style.opacity = 0;
+      setTimeout(function() { el.style.display = 'none'; }, 250);
+    }, 1200);
+  }
+</script>
 <body>
   <div id="top"></div>
   <header class="header-glass">
