@@ -39,42 +39,23 @@ h1 {
   margin-bottom: 18px;
   font-weight: 500;
 }
-.header-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin: 16px 0 0 0;
+nav {
+  margin: 12px 0 0 0;
 }
-.btn-main {
-  background: linear-gradient(90deg, #2994fa 0%, #0450c8 100%);
+nav button {
+  background: #2993ff;
+  border: none;
   color: #fff;
-  font-weight: bold;
-  font-size: 1.13rem;
-  padding: 13px 38px;
+  margin: 5px 7px;
+  padding: 10px 18px;
   border-radius: 22px;
-  text-decoration: none;
-  box-shadow: 0 4px 18px 0 #0054bb30;
-  transition: background .18s, box-shadow .15s;
-}
-.btn-main:hover { background: #2c71ec; box-shadow: 0 6px 22px #1b69d8a0; }
-.btn-sec {
-  background: #eaf4ff;
-  color: #2678c4;
-  font-weight: 600;
   font-size: 1.08rem;
-  padding: 10px 20px;
-  border-radius: 16px;
-  text-decoration: none;
-  border: 1.3px solid #b4d8f7;
-  transition: background .15s, color .14s;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0b2b4c34;
+  transition: background .18s;
 }
-.btn-sec:hover { background: #d2eaff; color: #0450c8; }
-
-@media (max-width: 800px) {
-  .header-buttons { flex-direction: column; gap: 10px; }
-  .btn-main, .btn-sec { width: 98%; max-width: 320px; margin: 0 auto; text-align: center; }
-}
+nav button:hover { background: #1e73c8; }
 
 main { width: 100%; max-width: 900px; margin: 0 auto; }
 .glass-section {
@@ -98,7 +79,6 @@ h2 {
   gap: 28px;
   flex-wrap: wrap;
   margin-top: 20px;
-  justify-content: center;
 }
 .download-card {
   flex: 1 1 240px;
@@ -323,88 +303,4 @@ footer {
   .contact-row span { width: 100%; justify-content: center; }
 }
 
-@media (max-width: 700px) {
-  .header-glass, .glass-section {
-    max-width: 100vw;
-    padding: 12vw 2vw 5vw 2vw;
-    border-radius: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .logo {
-    width: 68vw;
-    min-width: 88px;
-    max-width: 92vw;
-    margin-bottom: 8px;
-  }
-  h1 {
-    font-size: 1.55rem;
-    margin-bottom: 4px;
-  }
-  .subtitle {
-    font-size: 1.01rem;
-    margin-bottom: 10px;
-  }
-  .header-buttons {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-  .btn-main, .btn-sec {
-    width: 98%;
-    max-width: 99vw;
-    font-size: 1rem;
-    padding: 11px 0;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 13px;
-  }
-  .download-blocks {
-    flex-direction: column;
-    gap: 17px;
-  }
-  .download-card {
-    font-size: 1rem;
-    min-width: unset;
-    padding: 14px 8px 10px 8px;
-  }
-  .features-list, .howto-list {
-    font-size: 1rem;
-    padding-left: 15px;
-  }
-  .screenshots-gallery {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .screenshots-gallery img {
-    width: 99vw;
-    max-width: 99vw;
-    height: auto;
-    min-height: 260px;
-    max-height: 64vw;
-    border-radius: 11px;
-  }
-  .modal-content {
-    max-width: 99vw;
-    max-height: 75vh;
-  }
-  footer {
-    font-size: 0.97rem;
-    padding: 10px 0 10px 0;
-    border-radius: 0;
-  }
-  .contact-row {
-    flex-direction: column;
-    gap: 7px;
-    padding: 0;
-  }
-  .contact-row span {
-    width: 99vw;
-    justify-content: center;
-    padding: 4px 2vw;
-    font-size: 1rem;
-    background: rgba(34,48,72,0.21);
-  }
-}
+
