@@ -13,29 +13,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="shortcut icon" href="favicon.ico">
 </head>
-<script>
-  // Копіювання адрес і вивід підказки
-  document.querySelectorAll('.copy-link').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      e.preventDefault();
-      var val = this.dataset.copy;
-      navigator.clipboard.writeText(val).then(function() {
-        showCopyAlert('Адресу скопійовано!');
-      });
-    });
-  });
 
-  function showCopyAlert(msg) {
-    var el = document.getElementById('copy-alert');
-    el.textContent = msg;
-    el.style.display = 'block';
-    el.style.opacity = 1;
-    setTimeout(function() {
-      el.style.opacity = 0;
-      setTimeout(function() { el.style.display = 'none'; }, 250);
-    }, 1200);
-  }
-</script>
 <body>
   <div id="top"></div>
   <header class="header-glass">
@@ -163,30 +141,108 @@
   </div>
 </footer>
 
-  <script>
-    // Прокрутка до секції
-    function scrollToSection(id){
-      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+ Програма ChatGPT сказала:
+У тебе все майже ідеально, але є важливий нюанс:
+Скрипт, який відповідає за копіювання, повинен бути після створення елементів .copy-link в DOM, тобто після футера.
+
+Але у твоєму коді цей скрипт знаходиться в <head>, через що елементи ще не існують у момент підключення — тому не працює!
+
+Як правильно
+Видали цей блок із <head>:
+
+html
+Копіювати код
+<script>
+  // ... твій скрипт копіювання
+</script>
+Встав його в самий кінець сторінки — перед закриваючим тегом </body>!
+
+Додай маленьку перевірку, щоб усе точно працювало:
+
+html
+Копіювати код
+<script>
+  // Скрипт копіювання контактів (запускається лише після завантаження DOM)
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.copy-link').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var val = this.dataset.copy;
+        navigator.clipboard.writeText(val).then(function() {
+          showCopyAlert('Адресу скопійовано!');
+        });
+      });
+    });
+
+    function showCopyAlert(msg) {
+      var el = document.getElementById('copy-alert');
+      el.textContent = msg;
+      el.style.display = 'block';
+      el.style.opacity = 1;
+      setTimeout(function() {
+        el.style.opacity = 0;
+        setTimeout(function() { el.style.display = 'none'; }, 250);
+      }, 1200);
     }
-    // Копіювати email
-    function copyEmail() {
-      navigator.clipboard.writeText("energetik461954@gmail.com");
-      alert("Email скопійовано!");
+  });
+</script>
+Виправлений Фрагмент
+html
+Копіювати код
+<!-- ... твій футер ... -->
+<div id="copy-alert" class="copy-alert" style="display:none;"></div>
+</div>
+</footer>
+
+<!-- Сюди весь JS: -->
+<script>
+  // Прокрутка до секції
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  }
+  // Копіювати email зі сторінки "Завантажити"
+  function copyEmail() {
+    navigator.clipboard.writeText("energetik461954@gmail.com");
+    alert("Email скопійовано!");
+  }
+  // Lightbox для скріншотів
+  function openModal(img) {
+    var modal = document.getElementById("modal");
+    var modalImg = document.getElementById("modal-img");
+    var caption = document.getElementById("caption");
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    caption.innerHTML = img.alt;
+  }
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+  // Закрити модал по Esc
+  window.onkeydown = function(e){ if(e.key==='Escape') closeModal(); }
+
+  // --- СКРИПТ КОПІЮВАННЯ КОНТАКТІВ ---
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.copy-link').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var val = this.dataset.copy;
+        navigator.clipboard.writeText(val).then(function() {
+          showCopyAlert('Адресу скопійовано!');
+        });
+      });
+    });
+
+    function showCopyAlert(msg) {
+      var el = document.getElementById('copy-alert');
+      el.textContent = msg;
+      el.style.display = 'block';
+      el.style.opacity = 1;
+      setTimeout(function() {
+        el.style.opacity = 0;
+        setTimeout(function() { el.style.display = 'none'; }, 250);
+      }, 1200);
     }
-    // Lightbox для скріншотів
-    function openModal(img) {
-      var modal = document.getElementById("modal");
-      var modalImg = document.getElementById("modal-img");
-      var caption = document.getElementById("caption");
-      modal.style.display = "flex";
-      modalImg.src = img.src;
-      caption.innerHTML = img.alt;
-    }
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-    // Закрити модал по Esc
-    window.onkeydown = function(e){ if(e.key==='Escape') closeModal(); }
-  </script>
+  });
+</script>
 </body>
 </html>
