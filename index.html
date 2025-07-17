@@ -7,11 +7,11 @@
   <title>FishBeat — прогноз кльову риби</title>
   <link rel="stylesheet" href="style.css"/>
   <!-- Favicon та іконки для різних пристроїв -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="shortcut icon" href="favicon.ico">
 </head>
 
 <body>
@@ -20,16 +20,15 @@
     <img src="img/fishbeat_logo.png" alt="FishBeat logo" class="logo"/>
     <h1>FishBeat</h1>
     <p class="subtitle">Науковий прогноз кльову риби у твоєму смартфоні</p>
-    <nav>
-      <button onclick="scrollToSection('download')">Завантажити</button>
-      <button onclick="scrollToSection('features')">Можливості</button>
-      <button onclick="scrollToSection('howto')">Як користуватись</button>
-      <button onclick="scrollToSection('screenshots')">Скріншоти</button>
-      <button onclick="scrollToSection('faq')">FAQ</button>
-    </nav>
+    <div class="header-buttons">
+      <a class="btn-main" href="#download">Завантажити</a>
+      <a class="btn-sec" href="#features">Можливості</a>
+      <a class="btn-sec" href="#howto">Як користуватись</a>
+      <a class="btn-sec" href="#screenshots">Скріншоти</a>
+      <a class="btn-sec" href="#faq">FAQ</a>
+    </div>
   </header>
 
-  <!-- Кнопка догори -->
   <button class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Вгору">▲</button>
 
   <main>
@@ -39,9 +38,12 @@
       <div class="download-blocks">
         <div class="download-card">
           <span class="badge beta">Бета-версія</span>
-          <p>Щоб отримати доступ, надішліть e-mail на <b id="email">energetik461954@gmail.com</b>
+          <p>
+            Щоб отримати доступ, надішліть e-mail на <b id="email">energetik461954@gmail.com</b>
             <button class="copy-btn" onclick="copyEmail()" title="Скопіювати email">📋</button><br>
-            або Telegram <b>@MaksymKorol15</b>.<br>Після додавання отримаєте особисте посилання на Google Play.</p>
+            або Telegram <b>@MaksymKorol15</b>.<br>
+            Після додавання отримаєте особисте посилання на Google Play.
+          </p>
         </div>
         <div class="download-card">
           <span class="badge soon">Реліз незабаром</span>
@@ -111,70 +113,36 @@
     </section>
   </main>
 
-<footer>
-  <div class="footer-content">
-    <span>Розробник: Максим Король • © 2025 FishBeat</span>
-    <div class="contact-row">
-      <span>
-        Пошта: 
-        <a href="#" class="copy-link" data-copy="energetik461954@gmail.com">energetik461954@gmail.com</a>
-        <a class="icon-btn" href="mailto:energetik461954@gmail.com" title="Email">
-          <img src="img/email.svg" alt="Email">
-        </a>
-      </span>
-      <span>
-        • Telegram: 
-        <a href="#" class="copy-link" data-copy="@MaksymKorol15">@MaksymKorol15</a>
-        <a class="icon-btn" href="https://t.me/MaksymKorol15" target="_blank" title="Telegram">
-          <img src="img/tg.svg" alt="Telegram">
-        </a>
-      </span>
-      <span>
-        • Facebook: 
-        <a href="#" class="copy-link" data-copy="https://www.facebook.com/maksim.korol.866117">facebook.com/maksim.korol.866117</a>
-        <a class="icon-btn" href="https://www.facebook.com/maksim.korol.866117" target="_blank" title="Facebook">
-          <img src="img/fb.svg" alt="Facebook">
-        </a>
-      </span>
+  <footer>
+    <div class="footer-content">
+      <span>Розробник: Максим Король • © 2025 FishBeat</span>
+      <div class="contact-row">
+        <span>
+          Пошта: 
+          <a href="#" class="copy-link" data-copy="energetik461954@gmail.com">energetik461954@gmail.com</a>
+          <a class="icon-btn" href="mailto:energetik461954@gmail.com" title="Email">
+            <img src="img/email.svg" alt="Email">
+          </a>
+        </span>
+        <span>
+          • Telegram: 
+          <a href="#" class="copy-link" data-copy="@MaksymKorol15">@MaksymKorol15</a>
+          <a class="icon-btn" href="https://t.me/MaksymKorol15" target="_blank" title="Telegram">
+            <img src="img/tg.svg" alt="Telegram">
+          </a>
+        </span>
+        <span>
+          • Facebook: 
+          <a href="#" class="copy-link" data-copy="https://www.facebook.com/maksim.korol.866117">facebook.com/maksim.korol.866117</a>
+          <a class="icon-btn" href="https://www.facebook.com/maksim.korol.866117" target="_blank" title="Facebook">
+            <img src="img/fb.svg" alt="Facebook">
+          </a>
+        </span>
+      </div>
+      <div id="copy-alert" class="copy-alert" style="display:none;"></div>
     </div>
-    <div id="copy-alert" class="copy-alert" style="display:none;"></div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  // Скрипт копіювання контактів (запускається лише після завантаження DOM)
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.copy-link').forEach(function(el) {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        var val = this.dataset.copy;
-        navigator.clipboard.writeText(val).then(function() {
-          showCopyAlert('Адресу скопійовано!');
-        });
-      });
-    });
-
-    function showCopyAlert(msg) {
-      var el = document.getElementById('copy-alert');
-      el.textContent = msg;
-      el.style.display = 'block';
-      el.style.opacity = 1;
-      setTimeout(function() {
-        el.style.opacity = 0;
-        setTimeout(function() { el.style.display = 'none'; }, 250);
-      }, 1200);
-    }
-  });
-</script>
-Виправлений Фрагмент
-html
-Копіювати код
-<!-- ... твій футер ... -->
-<div id="copy-alert" class="copy-alert" style="display:none;"></div>
-</div>
-</footer>
-
-<!-- Сюди весь JS: -->
 <script>
   // Прокрутка до секції
   function scrollToSection(id){
@@ -225,4 +193,4 @@ html
   });
 </script>
 </body>
-</html>    
+</html>
