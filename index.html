@@ -87,12 +87,6 @@
         <img src="img/screen2.png" alt="Прогноз по годинах" onclick="openModal(this)">
         <img src="img/screen3.png" alt="Діалог та деталі" onclick="openModal(this)">
       </div>
-      <!-- Lightbox modal -->
-      <div id="modal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img" src="" alt="screenshot">
-        <div id="caption"></div>
-      </div>
     </section>
 
     <!-- FAQ -->
@@ -112,6 +106,13 @@
       </details>
     </section>
   </main>
+
+  <!-- MODAL FOR SCREENSHOTS -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img" src="" alt="screenshot">
+    <div id="caption"></div>
+  </div>
 
   <footer>
     <div class="footer-content">
@@ -161,6 +162,10 @@
     modal.style.display = "flex";
     modalImg.src = img.src;
     caption.innerHTML = img.alt;
+    // Щоб на мобілці скрін був завжди по центру:
+    setTimeout(function(){
+      modal.scrollIntoView({block: 'center', behavior: 'smooth'});
+    }, 20);
   }
   function closeModal() {
     document.getElementById("modal").style.display = "none";
