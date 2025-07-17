@@ -1,0 +1,172 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: #222;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center center/cover no-repeat;
+    filter: blur(6px) brightness(0.5);
+    width: 100vw; height: 100vh;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.71);
+    backdrop-filter: blur(7px);
+    border-radius: 1.2em;
+    box-shadow: 0 4px 24px #0005;
+    margin: 0 16px;
+    padding: 2em 1.4em;
+    color: #113355;
+    font-size: 1.14em;
+    transition: box-shadow .18s;
+}
+
+.header-card {
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 1.5em;
+}
+.logo {
+    width: 400px;         
+    margin-bottom: 0.7em;
+    margin-top: 0.3em;
+}
+.slogan {
+    color: #1f5e96;
+    font-size: 1.13em;
+    font-weight: 500;
+    margin: 0.3em 0 1.3em 0;
+}
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+.nav-btn {
+    display: inline-block;
+    background: #198cffea;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 2em;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 6px #0002;
+    letter-spacing: 0.02em;
+    font-size: 1em;
+    transition: background .17s, transform .15s;
+}
+.nav-btn:hover, .nav-btn:focus {
+    background: #0b57a6;
+    transform: scale(1.04);
+}
+.download-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 18px;
+    justify-content: center;
+}
+.mini-card {
+    background: rgba(255,255,255,0.75);
+    border-radius: 1em;
+    padding: 1.2em 1em;
+    box-shadow: 0 2px 10px #1a1a1a20;
+    min-width: 220px;
+    flex: 1 1 250px;
+}
+.mini-card h3 {margin-top: 0;}
+.features ul, .faq ul, .howto ol {
+    padding-left: 1.2em;
+}
+.screens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1em;
+    justify-content: center;
+    margin-top: 12px;
+}
+.screens img.screenshot {
+    width: 135px;
+    cursor: pointer;
+    border-radius: 1em;
+    box-shadow: 0 1px 10px #2236;
+    background: #e6f1fa;
+    border: 1px solid #aad4fa3c;
+    transition: transform 0.12s;
+}
+.screens img.screenshot:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 20px #0358;
+}
+/* Попап для великого скріну */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(30,42,53,0.85);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.popup img {
+    max-width: 94vw;
+    max-height: 90vh;
+    border-radius: 1.2em;
+    box-shadow: 0 6px 36px #011d;
+    background: #fff;
+}
+.footer-card {
+    text-align: center;
+    font-size: 0.98em;
+    color: #234;
+    background: rgba(245,255,255,0.83);
+    margin-bottom: 12px;
+    margin-top: 18px;
+}
+@media (max-width: 700px) {
+    main {
+        padding: 8px 0 30px 0;
+    }
+    .card {
+        margin: 0 2vw;
+        padding: 1.2em 0.7em;
+    }
+    .download-cards {
+        flex-direction: column;
+    }
+    .logo { width: 80px; }
+    .screens img.screenshot { width: 88px;}
+}
+
+.card h1, .card h2, .card h3 {
+    color: #08316d;
+    font-weight: 700;
+    text-shadow: 0 1px 3px #fff8;
+}
+
+.card, .card p, .card li, .card ul, .card ol {
+    color: #113355;
+    font-weight: 500;
+}
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishBeat — прогноз кльову риби</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/fish.png">
+</head>
+<body>
+    <div class="bg-image"></div>
+    <main>
+        <section class="card header-card">
+            <img src="img/fish.png" alt="FishBeat Logo" class="logo">
+           
+            <p class="slogan">Точний прогноз кльову риби у твоєму смартфоні</p>
+            <nav class="main-nav">
+                <a href="#download" class="nav-btn">Завантажити</a>
+                <a href="#features" class="nav-btn">Можливості</a>
+                <a href="#howto" class="nav-btn">Як користуватись</a>
+                <a href="#screenshots" class="nav-btn">Скріншоти</a>
+                <a href="#faq" class="nav-btn">FAQ</a>
+            </nav>
+        </section>
+
+        <section id="download" class="card">
+            <h2>Завантажити FishBeat</h2>
+            <div class="download-cards">
+                <div class="mini-card">
+                    <h3>🔒 Бета-версія</h3>
+                    <p>Щоб отримати доступ, надішліть свій email на  
+                    <a href="mailto:energetik461954@gmail.com">energetik461954@gmail.com</a>  
+                    або у Telegram  
+                    <a href="https://t.me/MaksymKorol15">@MaksymKorol15</a>.<br>
+                    Після додавання отримаєте особисте посилання на Google Play.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>⏳ Реліз незабаром</h3>
+                    <p>Офіційний реліз FishBeat — скоро!  
+                    Слідкуйте за новинами та отримайте gift-версію, якщо встигнете стати тестувальником.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="card">
+            <h2>Можливості додатку</h2>
+            <ul>
+                <li>Прогноз кльову по містах та водоймах</li>
+                <li>Вибір виду риби і дати</li>
+                <li>Графік активності риби по годинах</li>
+                <li>Зручний пошук локації</li>
+                <li>Детальна погода для рибалки</li>
+            </ul>
+        </section>
+
+        <section id="howto" class="card">
+            <h2>Як користуватись?</h2>
+            <ol>
+                <li>Встановіть додаток через Google Play</li>
+                <li>Обирайте місто або водойму</li>
+                <li>Виберіть вид риби та дату</li>
+                <li>Виберіть дату</li>
+                <li>Натисніть “Показати прогноз”</li>
+                <li>Дивіться графік, ловіть більше риби!</li>
+            </ol>
+        </section>
+
+        <section id="screenshots" class="card">
+            <h2>Скріншоти FishBeat</h2>
+            <div class="screens">
+                <img src="img/screen1.png" alt="Скрін 1" class="screenshot">
+                <img src="img/screen2.png" alt="Скрін 2" class="screenshot">
+                <img src="img/screen3.png" alt="Скрін 3" class="screenshot">
+                <!-- Додай ще скріни, якщо треба -->
+            </div>
+            <!-- Popup для перегляду скріну -->
+            <div id="popup" class="popup" style="display:none;" onclick="hidePopup()">
+                <img id="popupImg" src="" alt="Великий скрін">
+            </div>
+        </section>
+
+        <section id="faq" class="card">
+            <h2>FAQ</h2>
+            <ul>
+                <li><b>Як отримати gift-версію?</b> — Надішліть email, і після релізу отримаєте інструкцію для активації безкоштовної версії назавжди.</li>
+                <li><b>Чи буде додаток платним?</b> — Для перших 20 тестувальників — безкоштовно на завжди!</li>
+                <li><b>Де дізнатись новини?</b> — На цьому сайті, або пишіть у Telegram.</li>
+            </ul>
+        </section>
+
+        <footer class="card footer-card">
+            <p>Контакти: <a href="mailto:energetik461954@gmail.com">energetik461954@gmail.com</a> | Telegram: <a href="https://t.me/MaksymKorol15">@MaksymKorol15</a></p>
+            <p>&copy; 2025 FishBeat</p>
+        </footer>
+    </main>
+    <script>
+        // Попап для скрінів
+        function showPopup(src) {
+            document.getElementById('popupImg').src = src;
+            document.getElementById('popup').style.display = 'flex';
+        }
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        window.onload = function() {
+            document.querySelectorAll('.screenshot').forEach(img => {
+                img.onclick = (e) => {
+                    e.stopPropagation();
+                    showPopup(img.src);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
