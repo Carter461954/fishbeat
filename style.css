@@ -1,306 +1,85 @@
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  min-height: 100vh;
-  background: url('img/bg-fishbeat.jpg') no-repeat center center fixed, #143147;
-  background-size: cover;
-  color: #f8f9fb;
-  overflow-x: hidden;
+@media (max-width: 700px) {
+  .header-glass, .glass-section {
+    max-width: 100vw;
+    padding: 12vw 2vw 5vw 2vw;
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .logo {
+    width: 68vw;
+    min-width: 88px;
+    max-width: 92vw;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 1.55rem;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 1.01rem;
+    margin-bottom: 10px;
+  }
+  .header-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .btn-main, .btn-sec {
+    width: 98%;
+    max-width: 99vw;
+    font-size: 1rem;
+    padding: 11px 0;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 13px;
+  }
+  .download-blocks {
+    flex-direction: column;
+    gap: 17px;
+  }
+  .download-card {
+    font-size: 1rem;
+    min-width: unset;
+    padding: 14px 8px 10px 8px;
+  }
+  .features-list, .howto-list {
+    font-size: 1rem;
+    padding-left: 15px;
+  }
+  .screenshots-gallery {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .screenshots-gallery img {
+    width: 99vw;
+    max-width: 99vw;
+    height: auto;
+    min-height: 260px;
+    max-height: 64vw;
+    border-radius: 11px;
+  }
+  .modal-content {
+    max-width: 99vw;
+    max-height: 75vh;
+  }
+  footer {
+    font-size: 0.97rem;
+    padding: 10px 0 10px 0;
+    border-radius: 0;
+  }
+  .contact-row {
+    flex-direction: column;
+    gap: 7px;
+    padding: 0;
+  }
+  .contact-row span {
+    width: 99vw;
+    justify-content: center;
+    padding: 4px 2vw;
+    font-size: 1rem;
+    background: rgba(34,48,72,0.21);
+  }
 }
-
-.header-glass {
-  margin: 32px auto 16px auto;
-  padding: 32px 24px 24px 24px;
-  max-width: 600px;
-  background: rgba(34, 48, 72, 0.90);
-  border-radius: 28px;
-  box-shadow: 0 12px 36px 0 rgba(10,20,60,.18);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.logo {
-  width: 300px;
-  max-width: 85vw;
-  margin-bottom: 16px;
-}
-h1 {
-  font-size: 2.8rem;
-  letter-spacing: 2px;
-  font-weight: 700;
-  margin: 0;
-  color: #fff5e2;
-  text-shadow: 0 2px 12px #081a26;
-}
-.subtitle {
-  color: #85cdfa;
-  font-size: 1.25rem;
-  margin-bottom: 18px;
-  font-weight: 500;
-}
-nav {
-  margin: 12px 0 0 0;
-}
-nav button {
-  background: #2993ff;
-  border: none;
-  color: #fff;
-  margin: 5px 7px;
-  padding: 10px 18px;
-  border-radius: 22px;
-  font-size: 1.08rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px #0b2b4c34;
-  transition: background .18s;
-}
-nav button:hover { background: #1e73c8; }
-
-main { width: 100%; max-width: 900px; margin: 0 auto; }
-.glass-section {
-  background: rgba(18, 24, 37, 0.88);
-  border-radius: 24px;
-  margin: 34px 0;
-  padding: 30px 26px 26px 26px;
-  box-shadow: 0 2px 32px 0 rgba(20,40,70,.13);
-  backdrop-filter: blur(2px);
-}
-h2 {
-  color: #ffab5e;
-  margin-top: 0;
-  font-size: 2.0rem;
-  font-weight: 700;
-  text-shadow: 0 1px 6px #091923cc;
-}
-.fish-accent { color: #23bbfa; }
-.download-blocks {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-.download-card {
-  flex: 1 1 240px;
-  min-width: 220px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 18px;
-  padding: 18px 20px 12px 20px;
-  box-shadow: 0 2px 8px #0002;
-  color: #fffbe2;
-  font-size: 1.07rem;
-  position: relative;
-}
-.badge {
-  display: inline-block;
-  font-size: 1.02rem;
-  padding: 5px 16px;
-  border-radius: 10px;
-  font-weight: bold;
-  margin-bottom: 9px;
-}
-.beta { background: #11c9fa44; color: #00e6ff; border: 1px solid #23bbfa44; }
-.soon { background: #ffd8b8bb; color: #fa6700; border: 1px solid #ffab5e77; }
-
-.copy-btn {
-  margin-left: 7px;
-  font-size: 1.1em;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #23bbfa;
-  vertical-align: middle;
-}
-
-.features-list {
-  margin: 18px 0 0 0;
-  padding: 0 0 0 25px;
-  font-size: 1.12rem;
-}
-.features-list li {
-  margin: 10px 0;
-  line-height: 1.5;
-}
-
-.howto-list {
-  padding-left: 24px;
-  font-size: 1.12rem;
-  margin: 18px 0 0 0;
-}
-.howto-list li { margin-bottom: 8px; }
-
-.screenshots-gallery {
-  display: flex;
-  gap: 22px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
-.screenshots-gallery img {
-  width: 200px;
-  height: 430px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 4px 16px #0726444a;
-  cursor: pointer;
-  transition: transform .2s;
-  border: 3px solid #0ff3ff12;
-}
-.screenshots-gallery img:hover { transform: scale(1.10); border-color: #36c8ff; }
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 44;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(12,24,32,0.93);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.modal-content {
-  max-width: 98vw; max-height: 90vh;
-  border-radius: 18px;
-  box-shadow: 0 4px 44px #0026;
-  margin-bottom: 14px;
-}
-.close {
-  color: #fff;
-  font-size: 2.2rem;
-  font-weight: bold;
-  position: absolute;
-  top: 40px;
-  right: 80px;
-  cursor: pointer;
-  z-index: 51;
-}
-#caption {
-  color: #b8f3ff;
-  margin-bottom: 30px;
-  font-size: 1.18rem;
-  text-align: center;
-}
-
-/* FAQ */
-details { margin-bottom: 14px; }
-summary { font-weight: 600; color: #ffb244; cursor: pointer; font-size: 1.13rem;}
-details[open] summary { color: #23bbfa; }
-
-/* Кнопка Вгору */
-.to-top {
-  position: fixed;
-  bottom: 28px;
-  right: 34px;
-  background: #2993ffcc;
-  color: #fff;
-  font-size: 1.8rem;
-  border: none;
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  box-shadow: 0 2px 10px #08244444;
-  cursor: pointer;
-  z-index: 150;
-  display: none;
-}
-@media (min-width: 700px) { .to-top { display: block; } }
-
-footer {
-  background: rgba(19, 29, 41, 0.92);
-  color: #fff;
-  text-align: center;
-  padding: 18px 0 10px 0;
-  margin-top: 32px;
-  border-top: 1.5px solid #25bbf999;
-  position: relative;
-}
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-}
-.contact-row {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  margin-bottom: 6px;
-}
-.contact-row span {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 1.05rem;
-  background: rgba(34,48,72,0.14);
-  border-radius: 8px;
-  padding: 5px 12px 5px 12px;
-  box-shadow: 0 1px 4px #0018;
-}
-.copy-link {
-  cursor: pointer;
-  color: #ffd966;
-  text-decoration: underline dotted;
-  transition: color 0.2s;
-  margin: 0 5px 0 2px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-}
-.copy-link:hover {
-  color: #fff89c;
-  text-decoration: underline solid;
-}
-.icon-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px;
-  border-radius: 6px;
-  background: none;
-  transition: background 0.16s;
-  margin-left: 3px;
-}
-.icon-btn:hover {
-  background: #e0f2fe;
-}
-.icon-btn img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  filter: drop-shadow(0 0 2px #0077ff22);
-  transition: filter 0.2s;
-}
-.icon-btn:hover img {
-  filter: drop-shadow(0 0 2px #0077ff) brightness(1.1);
-}
-.copy-alert {
-  text-align: center;
-  margin-top: 6px;
-  background: #00b894e0;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 8px;
-  padding: 6px 18px;
-  box-shadow: 0 2px 16px #0077ff33;
-  transition: opacity 0.2s;
-  pointer-events: none;
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 18px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0;
-}
-@media (max-width: 800px) {
-  .header-glass, .glass-section { max-width: 96vw; padding: 19px 7vw; }
-  .logo { width: 86vw; }
-  .download-blocks { flex-direction: column; gap: 19px; }
-  .screenshots-gallery img { width: 93vw; height: auto; }
-  .contact-row { flex-direction: column; gap: 10px;}
-  .contact-row span { width: 100%; justify-content: center; }
-}
-
-
