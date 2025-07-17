@@ -212,45 +212,46 @@ footer {
   padding: 18px 0 10px 0;
   margin-top: 32px;
   border-top: 1.5px solid #25bbf999;
+  position: relative;
 }
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
-.social-icons {
-  margin-top: 5px;
-}
-.social-icons a img {
-  width: 32px;
-  height: 32px;
-  margin: 0 7px;
-  filter: drop-shadow(0 1px 2px #33ccff66);
-  transition: transform .18s;
-}
-.social-icons a img:hover { transform: scale(1.2); }
-
-@media (max-width: 800px) {
-  .header-glass, .glass-section { max-width: 96vw; padding: 19px 7vw; }
-  .logo { width: 86vw; }
-  .download-blocks { flex-direction: column; gap: 19px; }
-  .screenshots-gallery img { width: 93vw; height: auto; }
-}
-
 .contact-row {
   display: flex;
-  gap: 22px;
+  gap: 30px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 .contact-row span {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  background: rgba(34,48,72,0.14);
+  border-radius: 8px;
+  padding: 5px 12px 5px 12px;
+  box-shadow: 0 1px 4px #0018;
+}
+.copy-link {
+  cursor: pointer;
+  color: #ffd966;
+  text-decoration: underline dotted;
+  transition: color 0.2s;
+  margin: 0 5px 0 2px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.copy-link:hover {
+  color: #fff89c;
+  text-decoration: underline solid;
 }
 .icon-btn {
   display: inline-flex;
@@ -273,4 +274,31 @@ footer {
 }
 .icon-btn:hover img {
   filter: drop-shadow(0 0 2px #0077ff) brightness(1.1);
+}
+.copy-alert {
+  text-align: center;
+  margin-top: 6px;
+  background: #00b894e0;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 6px 18px;
+  box-shadow: 0 2px 16px #0077ff33;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 18px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+@media (max-width: 800px) {
+  .header-glass, .glass-section { max-width: 96vw; padding: 19px 7vw; }
+  .logo { width: 86vw; }
+  .download-blocks { flex-direction: column; gap: 19px; }
+  .screenshots-gallery img { width: 93vw; height: auto; }
+  .contact-row { flex-direction: column; gap: 10px;}
+  .contact-row span { width: 100%; justify-content: center; }
 }
