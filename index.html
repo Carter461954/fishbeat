@@ -18,16 +18,18 @@
   <div id="top"></div>
   <header class="header-glass">
     <img src="img/fishbeat_logo.png" alt="FishBeat logo" class="logo"/>
+    <h1>FishBeat</h1>
     <p class="subtitle">Науковий прогноз кльову риби у твоєму смартфоні</p>
-    <div class="header-buttons">
-      <a class="btn-main" href="#download">Завантажити</a>
-      <a class="btn-sec" href="#features">Можливості</a>
-      <a class="btn-sec" href="#howto">Як користуватись</a>
-      <a class="btn-sec" href="#screenshots">Скріншоти</a>
-      <a class="btn-sec" href="#faq">FAQ</a>
-    </div>
+    <nav class="header-buttons">
+      <a class="header-btn" href="#download">Завантажити</a>
+      <a class="header-btn" href="#features">Можливості</a>
+      <a class="header-btn" href="#howto">Як користуватись</a>
+      <a class="header-btn" href="#screenshots">Скріншоти</a>
+      <a class="header-btn" href="#faq">FAQ</a>
+    </nav>
   </header>
 
+  <!-- Кнопка догори -->
   <button class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Вгору">▲</button>
 
   <main>
@@ -144,11 +146,7 @@
   </footer>
 
 <script>
-  // Прокрутка до секції
-  function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
-  }
-  // Копіювати email зі сторінки "Завантажити"
+  // Копіювання email зі сторінки "Завантажити"
   function copyEmail() {
     navigator.clipboard.writeText("energetik461954@gmail.com");
     alert("Email скопійовано!");
@@ -161,7 +159,6 @@
     modal.style.display = "flex";
     modalImg.src = img.src;
     caption.innerHTML = img.alt;
-    // Щоб на мобілці скрін був завжди по центру:
     setTimeout(function(){
       modal.scrollIntoView({block: 'center', behavior: 'smooth'});
     }, 20);
@@ -172,7 +169,7 @@
   // Закрити модал по Esc
   window.onkeydown = function(e){ if(e.key==='Escape') closeModal(); }
 
-  // --- СКРИПТ КОПІЮВАННЯ КОНТАКТІВ ---
+  // СКРИПТ КОПІЮВАННЯ КОНТАКТІВ
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.copy-link').forEach(function(el) {
       el.addEventListener('click', function(e) {
