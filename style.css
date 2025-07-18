@@ -251,98 +251,67 @@ details[open] summary { color: #23bbfa; }
 
 /* === FOOTER === */
 footer {
-  background: rgba(19, 29, 41, 0.92);
+  background: rgba(19,29,41,0.92);
   color: #fff;
   text-align: center;
-  padding: 18px 0 10px 0;
+  padding: 18px 0 10px;
   margin-top: 32px;
   border-top: 1.5px solid #25bbf999;
-  position: relative;
-  width: 100%;
 }
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  position: relative;
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
   font-size: 1.05rem;
 }
 
-/* --- CONTACT ROW (NEW) --- */
+/* --- CONTACT ROW (оновлений) --- */
 .contact-row {
   display: flex;
-  flex-direction: row;
-  gap: 24px;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 10px;
-  margin-bottom: 6px;
-  width: 100%;
-  padding: 0;
+  gap: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 6px;
+  padding: 0 12px;
 }
 .contact-row span {
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-size: 1rem;
+  gap: 5px;
   background: rgba(34,48,72,0.13);
   border-radius: 9px;
-  padding: 5px 14px 5px 10px;
-  margin: 0 1px;
-  box-shadow: 0 1px 3px #0016;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  min-width: 0;
+  max-width: 100%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .contact-ico {
-  width: 22px;
-  height: 22px;
-  filter: drop-shadow(0 0 2px #0091ff50) brightness(1.11);
-  margin-right: 3px;
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 2px #0091ff50) brightness(1.1);
 }
 .contact-type {
   color: #23bbfa;
   font-weight: 500;
-  font-size: 1.04em;
-  margin-right: 2px;
-  letter-spacing: 0.02em;
 }
 .contact-link {
   color: #fff !important;
   text-decoration: none;
   font-weight: 500;
-  transition: color .18s;
-  border-bottom: 1.7px dotted #23bbfa90;
-  padding-bottom: 0px;
-  font-size: 1.04em;
+  border-bottom: 1.5px dotted #23bbfa90;
+  transition: color .18s, border-bottom .18s;
 }
 .contact-link:hover {
   color: #23bbfa !important;
-  border-bottom: 2px solid #23bbfa;
-  background: none !important;
-}
-
-.copy-alert {
-  text-align: center;
-  margin-top: 6px;
-  background: #00b894e0;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 8px;
-  padding: 6px 18px;
-  box-shadow: 0 2px 16px #0077ff33;
-  transition: opacity 0.2s;
-  pointer-events: none;
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 18px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0;
+  border-bottom: 1.5px solid #23bbfa;
 }
 
 /* === ПОСИЛАННЯ === */
