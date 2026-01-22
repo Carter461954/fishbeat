@@ -3,189 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="FishBeat — науковий прогноз кльову риби у твоєму смартфоні. Зручний додаток для рибалок: погода, активність, карта, персональні сповіщення.">
+  <meta name="description" content="FishBeat — офіційний додаток для прогнозу кльову риби. Доступний у Google Play. Погодинний прогноз, погода, сповіщення.">
   <title>FishBeat — прогноз кльову риби</title>
+
   <link rel="stylesheet" href="style.css"/>
-  <!-- Favicon та іконки для різних пристроїв -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- favicon -->
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
-  <div id="top"></div>
-<header class="header-main">
-  <img src="img/fishbeat_logo.png" alt="FishBeat logo" class="logo"/>
-  <p class="subtitle">Науковий прогноз кльову риби у твоєму смартфоні</p>
-  <nav class="header-buttons">
-    <a class="header-btn" href="#download">Завантажити</a>
-    <a class="header-btn" href="#features">Можливості</a>
-    <a class="header-btn" href="#howto">Як користуватись</a>
-    <a class="header-btn" href="#screenshots">Скріншоти</a>
-    <a class="header-btn" href="#faq">FAQ</a>
-  </nav>
-</header>
+  <header class="header-glass">
+    <img src="img/fishbeat_logo.png" alt="FishBeat logo" class="logo"/>
 
+    <h1>FishBeat</h1>
+    <p class="subtitle">
+      Офіційний додаток для прогнозу кльову риби — вже доступний у Google Play
+    </p>
 
-  <!-- Кнопка догори -->
-  <button class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Вгору">▲</button>
+    <nav>
+      <button onclick="openPlay()">Google Play</button>
+      <button onclick="scrollToSection('features')">Можливості</button>
+      <button onclick="scrollToSection('howto')">Як працює</button>
+      <button onclick="scrollToSection('screenshots')">Скріншоти</button>
+      <button onclick="scrollToSection('contacts')">Контакти</button>
+    </nav>
+  </header>
 
   <main>
-    <!-- Завантажити -->
+
+    <!-- DOWNLOAD -->
     <section id="download" class="glass-section">
       <h2>Завантажити <span class="fish-accent">FishBeat</span></h2>
-      <div class="download-blocks">
-        <div class="download-card">
-          <span class="badge beta">Бета-версія</span>
-          <p>
-            Щоб отримати доступ, надішліть e-mail на <b id="email">energetik461954@gmail.com</b>
-            <button class="copy-btn" onclick="copyEmail()" title="Скопіювати email">📋</button><br>
-            або Telegram <b>@MaksymKorol15</b>.<br>
-            Після додавання отримаєте особисте посилання на Google Play.
-          </p>
-        </div>
-        <div class="download-card">
-          <span class="badge soon">Реліз незабаром</span>
-          <p>Офіційний реліз FishBeat — <b>дуже скоро!</b><br>
-          Слідкуйте за оновленнями, щоб встигнути отримати безкоштовну gift-версію.</p>
-        </div>
+
+      <div class="download-card">
+        <p>
+          FishBeat — це інструмент для рибалок, який аналізує погоду та умови,
+          щоб показати найкращий час для кльову.
+        </p>
+
+        <a class="play-btn"
+           href="https://play.google.com/store/apps/details?id=com.carter.fishbeat"
+           target="_blank">
+          📲 Завантажити з Google Play
+        </a>
       </div>
     </section>
 
-    <!-- Можливості -->
+    <!-- FEATURES -->
     <section id="features" class="glass-section">
       <h2>Можливості</h2>
       <ul class="features-list">
-        <li>✓ Прогноз кльову риби для будь-якої локації світу</li>
-        <li>✓ Вибір мирної або хижої риби</li>
-        <li>✓ Детальний погодинний графік активності</li>
-        <li>✓ Сповіщення про кращі години кльову</li>
-        <li>✓ Інтерфейс українською, адаптація під смартфон</li>
-        <li>✓ Бонус: Gift-версія для тестувальників!</li>
+        <li>✓ Погодинний прогноз кльову</li>
+        <li>✓ Вибір хижої або мирної риби</li>
+        <li>✓ Аналіз погоди, вітру, тиску</li>
+        <li>✓ Інтерактивний графік активності</li>
+        <li>✓ Push-сповіщення про кращі години</li>
+        <li>✓ Працює по всьому світу</li>
       </ul>
     </section>
 
-    <!-- Інструкція -->
+    <!-- HOW IT WORKS -->
     <section id="howto" class="glass-section">
-      <h2>Як користуватись?</h2>
+      <h2>Як працює FishBeat</h2>
       <ol class="howto-list">
-        <li>Виберіть місто або населений пункт.</li>
-        <li>Оберіть тип риби, яку плануєте ловити.</li>
-        <li>Вкажіть дату, коли плануєте поїздку на риболовлю (до 5 днів наперед).</li>
-        <li>Натисніть “Показати прогноз” — побачите погодинний графік і ймовірність кльову.</li>
-        <li>Додаток може надсилати сповіщення у вибрані години — не пропустіть “піковий кльов”.</li>
-        <li>У разі запитань — звертайтесь за контактами внизу сторінки!</li>
+        <li>Оберіть місто або водойму</li>
+        <li>Вкажіть тип риби</li>
+        <li>Оберіть дату (до 5 днів наперед)</li>
+        <li>Отримайте погодинний прогноз кльову</li>
+        <li>Скористайтесь найкращими годинами</li>
       </ol>
     </section>
 
-    <!-- Скріншоти -->
+    <!-- SCREENSHOTS -->
     <section id="screenshots" class="glass-section">
       <h2>Скріншоти</h2>
+
       <div class="screenshots-gallery">
-        <img src="img/screen1.png" alt="Головний екран" onclick="openModal(this)">
-        <img src="img/screen2.png" alt="Прогноз по годинах" onclick="openModal(this)">
-        <img src="img/screen3.png" alt="Діалог та деталі" onclick="openModal(this)">
+        <img src="img/screen1.png" onclick="openModal(this)">
+        <img src="img/screen2.png" onclick="openModal(this)">
+        <img src="img/screen3.png" onclick="openModal(this)">
+      </div>
+
+      <div id="modal" class="modal" onclick="closeModal()">
+        <img id="modal-img">
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="glass-section">
-      <h2>FAQ — Часті питання</h2>
-      <details>
-        <summary>Чи можна спробувати безкоштовно?</summary>
-        <p>Так! Долучайтесь до тестування — отримайте gift-версію назавжди.</p>
-      </details>
-      <details>
-        <summary>Де скачати додаток?</summary>
-        <p>Зараз — тільки за персональним посиланням від розробника (див. секцію “Завантажити”).</p>
-      </details>
-      <details>
-        <summary>Що робити, якщо виникли труднощі?</summary>
-        <p>Напишіть на email або в Telegram — допоможу особисто!</p>
-      </details>
+    <!-- CONTACTS -->
+    <section id="contacts" class="glass-section">
+      <h2>Контакти</h2>
+
+      <div class="contact-row">
+        <span>
+          Пошта:
+          <b onclick="copyText('energetik461954@gmail.com')">
+            energetik461954@gmail.com
+          </b>
+        </span>
+
+        <span>
+          Telegram:
+          <b onclick="copyText('@MaksymKorol15')">
+            @MaksymKorol15
+          </b>
+        </span>
+      </div>
+
+      <p class="hint">Натисніть на контакт, щоб скопіювати</p>
     </section>
+
   </main>
 
-  <!-- MODAL FOR SCREENSHOTS -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modal-img" src="" alt="screenshot">
-    <div id="caption"></div>
-  </div>
-
   <footer>
-  <div class="footer-content">
-    <span>Розробник: Максим Король • © 2025 FishBeat</span>
-    <div class="contact-row">
-      <span>
-        <img src="img/email.svg" alt="Email" class="contact-ico">
-        <span class="contact-type">Email:</span>
-        <a href="mailto:energetik461954@gmail.com" class="contact-link">energetik461954@gmail.com</a>
-      </span>
-      <span>
-        <img src="img/tg.svg" alt="Telegram" class="contact-ico">
-        <span class="contact-type">Telegram:</span>
-        <a href="https://t.me/MaksymKorol15" target="_blank" class="contact-link">@MaksymKorol15</a>
-      </span>
-      <span>
-        <img src="img/fb.svg" alt="Facebook" class="contact-ico">
-        <span class="contact-type">Facebook:</span>
-        <a href="https://www.facebook.com/maksim.korol.866117" target="_blank" class="contact-link">facebook.com</a>
-      </span>
-    </div>
-    <div id="copy-alert" class="copy-alert" style="display:none;"></div>
-  </div>
-</footer>
+    <span>© 2025 FishBeat • Розробник: Максим Король</span>
+  </footer>
 
 <script>
-  // Копіювання email зі сторінки "Завантажити"
-  function copyEmail() {
-    navigator.clipboard.writeText("energetik461954@gmail.com");
-    alert("Email скопійовано!");
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
   }
-  // Lightbox для скріншотів
-  function openModal(img) {
-    var modal = document.getElementById("modal");
-    var modalImg = document.getElementById("modal-img");
-    var caption = document.getElementById("caption");
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-    caption.innerHTML = img.alt;
-    setTimeout(function(){
-      modal.scrollIntoView({block: 'center', behavior: 'smooth'});
-    }, 20);
-  }
-  function closeModal() {
-    document.getElementById("modal").style.display = "none";
-  }
-  // Закрити модал по Esc
-  window.onkeydown = function(e){ if(e.key==='Escape') closeModal(); }
 
-  // СКРИПТ КОПІЮВАННЯ КОНТАКТІВ
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.copy-link').forEach(function(el) {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        var val = this.dataset.copy;
-        navigator.clipboard.writeText(val).then(function() {
-          showCopyAlert('Адресу скопійовано!');
-        });
-      });
-    });
+  function openPlay(){
+    window.open(
+      'https://play.google.com/store/apps/details?id=com.carter.fishbeat',
+      '_blank'
+    );
+  }
 
-    function showCopyAlert(msg) {
-      var el = document.getElementById('copy-alert');
-      el.textContent = msg;
-      el.style.display = 'block';
-      el.style.opacity = 1;
-      setTimeout(function() {
-        el.style.opacity = 0;
-        setTimeout(function() { el.style.display = 'none'; }, 250);
-      }, 1200);
-    }
-  });
+  function copyText(text){
+    navigator.clipboard.writeText(text);
+    alert('Скопійовано: ' + text);
+  }
+
+  function openModal(img){
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('modal-img').src = img.src;
+  }
+
+  function closeModal(){
+    document.getElementById('modal').style.display = 'none';
+  }
 </script>
+
 </body>
 </html>
